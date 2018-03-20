@@ -19,15 +19,37 @@ const UserListComponent = (props) =>{
             const getDay =  dateOrigin.getDay()+1;
             return getDay + '.'+ getMonth + '.' + getYear;
         }
+
+          const insideCard = () => {
+            return <React.Fragment>
+                <img src={props.user.photo} alt={props.user.photo} className="circle" />
+                <span className="title">
+                  {props.user.firstName} {props.user.lastName}
+                </span>
+                <p>
+                  {" "}
+                  <i className="material-icons">email</i> {email()}
+                  <br />
+                  <i className="material-icons">
+                    cake
+                  </i> {birthDate()}
+                </p>
+              </React.Fragment>;
+          };
+
+          const femaleorMaleCard = () => {
+            if (props.user.gender === "female") {
+              return <li className="collection-item avatar red lighten-5">
+                  {insideCard()}
+                </li>;
+            }
+            return <li className="collection-item avatar">
+                {insideCard()}
+              </li>;
+          };
     return (
         <ul className="collection">
-        <li  className="collection-item avatar">
-               <img src={props.user.photo} alt={props.user.photo} className="circle" />
-               <span className="title">{props.user.firstName} {props.user.lastName}</span>
-               <p> <i className="material-icons">email</i> {email()}<br/>
-               <i className="material-icons">cake</i> {birthDate()}
-               </p>
-             </li>
+        {femaleorMaleCard()}
     
     </ul>
     

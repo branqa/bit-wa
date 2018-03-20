@@ -52,8 +52,8 @@ class App extends Component {
       <div className ="container">
        
         {this.state.showGrid ? this.showGrid() : this.showList() }
-       <Footer title='© 2018 Copyright BIT'/>
     </div>
+       <Footer title='© 2018 Copyright BIT'/>
     </React.Fragment>
     );
   }

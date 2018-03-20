@@ -22,7 +22,7 @@ const Header = (props) => {
         <a href="#" className="brand-logo center">{props.title}</a>
         <ul className="right hide-on-med-and-down">
         <li><a href="collapsible.html"><i className="material-icons">refresh</i></a></li>
-        {props.changeList ? gridIcon() : listIcon()}
+        {props.changeList ? listIcon() : gridIcon()}
         </ul>
       </div>
       </nav>
