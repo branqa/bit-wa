@@ -36,14 +36,14 @@ const UserCard = props => {
     );
   }
   
-  const femaleorMaleCard = () => {
+  const femaleOrMaleCard = () => {
     if (props.user.gender === "female") {
       return <div className="card red lighten-5">{insideCard()}</div>;
     }
-    return <div className="card">{insideCard()}</div>;
+    return <div className="card blue lighten-5">{insideCard()}</div>;
   };
 
-  return <div className="col s4 m4">{femaleorMaleCard()}</div>;
+  return <div className="col s4 m4">{femaleOrMaleCard()}</div>;
 };
 
 export default UserCard;

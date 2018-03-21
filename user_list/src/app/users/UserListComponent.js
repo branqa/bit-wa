@@ -8,7 +8,6 @@ const UserListComponent = (props) =>{
             const separated = emailOrigin.split('@');
             const nameAndSurname = separated[0];
             const hidden = nameAndSurname.slice(0,3)+ '...' + nameAndSurname.slice(nameAndSurname.length-3); 
-        
             return hidden + '@' + separated[1]
         }
     
@@ -20,14 +19,14 @@ const UserListComponent = (props) =>{
             return getDay + '.'+ getMonth + '.' + getYear;
         }
 
+        
           const insideCard = () => {
             return <React.Fragment>
                 <img src={props.user.photo} alt={props.user.photo} className="circle" />
                 <span className="title">
-                  {props.user.firstName} {props.user.lastName}
+                  {props.user.firstName.replace(props.user.firstName[0], props.user.firstName[0].toUpperCase())} {props.user.lastName.replace(props.user.lastName[0], props.user.lastName[0].toUpperCase())}
                 </span>
                 <p>
-                  {" "}
                   <i className="material-icons">email</i> {email()}
                   <br />
                   <i className="material-icons">
@@ -37,19 +36,19 @@ const UserListComponent = (props) =>{
               </React.Fragment>;
           };
 
-          const femaleorMaleCard = () => {
+          const femaleOrMaleCard = () => {
             if (props.user.gender === "female") {
               return <li className="collection-item avatar red lighten-5">
                   {insideCard()}
                 </li>;
             }
-            return <li className="collection-item avatar">
+            return <li className="collection-item avatar blue lighten-5">
                 {insideCard()}
               </li>;
           };
     return (
         <ul className="collection">
-        {femaleorMaleCard()}
+        {femaleOrMaleCard()}
     
     </ul>
     
